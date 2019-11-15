@@ -106,7 +106,14 @@ export class MessageBox extends Component {
                                 {
                                     this.props.type === 'text' &&
                                     <div className="rce-mbox-text">
-                                        {this.props.text}
+                                    {this.props.text.split('\n').map(function(item, key) {
+                                                                                           return (
+                                                                                             <span key={key}>
+                                                                                             {item}
+                                                                                             <br/>
+                                                                                             </span>
+                                                                                             )
+                                                                                         })}
                                     </div>
                                 }
 
